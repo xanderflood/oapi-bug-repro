@@ -1,0 +1,12 @@
+generatorName: typescript-angular
+
+inputSpec: /work/spec/openapi.spec.yaml
+output: /work/output
+
+gitUserId: xanderflood
+gitRepoId: oapi-bug-repro
+
+# https://openapi-generator.tech/docs/generators/typescript-angular/
+additionalProperties:
+  npmName: 'oapi-bug-repro'
+  ngVersion: 14.0.5

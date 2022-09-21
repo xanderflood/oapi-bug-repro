@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: Quiz API
+  description: An API designed to store, retrieve and share data about Quizzes, Items, and Passages
+  version: 1.42.0
+servers:
+  - url: https://ss-dev.achievementnetwork.org/quizapi
+    description: Development server
+  - url: https://ss-staging.achievementnetwork.org/quizapi
+    description: Staging server for QA
+  - url: https://ss.achievementnetwork.org/quizapi
+    description: Production server
+
+#
+#--------------- Endpoint Definitions -----------#
+#
+paths:
+#---------------Quizzes------------#
+  /objects:
+    get:
+      summary: Get an object.
+      operationId: getObject
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        200:
+          description: The created Quiz entry
+          content:
+            application/json:
+              schema:
+                type: string
+        400:
+          description: Invalid request
+        403:
+          description: User could not be authenticated, or does not have permission to use content
+        500:
+          description: An internal error occurred
